@@ -5,11 +5,9 @@
 #include <sys/wait.h>
 
 void main() {
-  pid_t pid, pid_hijo;
-  pid_t pidA, ppidA;
+  pid_t pid, pid_hijo, pidA, ppidA;;
   
   pid = fork();
-
   pidA = getpid();
   ppidA = getppid();
 
