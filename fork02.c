@@ -5,26 +5,22 @@
 #include <sys/wait.h>
 
 void main() {
-  pid_t pid, pid_hijo, pidA, ppidA;
+  pid_t pid, pid_hijo, pidA;
   
   pid = fork();
   pidA = getpid();
-  ppidA = getppid();
 
 
   if (pid == 0 )  
   {        
-    printf("Soy el proceso HIJO \n");	  
-    printf("Mi PID es: %d\n", pidA);
-    printf("El PID de mi padre es: %d\n" , ppidA);
+    printf("Diego Salas");
   }
   else    
   { 
    pid_hijo = wait(NULL); 
-   
-   printf("Soy el proceso PADRE \n");    
+     
    printf("Mi PID es: %d\n", pidA);
-   printf("PPID: %d\n", ppidA);      
+   printf("El PID de mi hijo es: %d\n", pid_hijo);      
   }
    exit(0);
 }
